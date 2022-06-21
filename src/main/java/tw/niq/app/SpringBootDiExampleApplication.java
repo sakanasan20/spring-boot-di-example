@@ -16,7 +16,7 @@ public class SpringBootDiExampleApplication {
 		
 		ApplicationContext ctx = SpringApplication.run(SpringBootDiExampleApplication.class, args);
 		
-		System.out.println("--- Hello ---");
+		System.out.println("--- Primary ---");
 		
 		HelloController helloController = (HelloController) ctx.getBean("helloController");
 		

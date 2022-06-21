@@ -1,5 +1,6 @@
 package tw.niq.app.controller;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import tw.niq.app.service.GreetingService;
@@ -9,7 +10,7 @@ public class ConstructorController {
 	
 	private final GreetingService greetingService;
 
-	public ConstructorController(GreetingService greetingService) {
+	public ConstructorController(@Qualifier("greetingConstructorService") GreetingService greetingService) {
 		this.greetingService = greetingService;
 	}
 

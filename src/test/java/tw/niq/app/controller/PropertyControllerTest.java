@@ -3,7 +3,7 @@ package tw.niq.app.controller;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import tw.niq.app.service.GreetingServiceImpl;
+import tw.niq.app.service.GreetingPropertyService;
 
 class PropertyControllerTest {
 	
@@ -12,7 +12,7 @@ class PropertyControllerTest {
 	@BeforeEach
 	void setUp() {
 		propertyController = new PropertyController();
-		propertyController.greetingService = new GreetingServiceImpl();
+		propertyController.greetingService = new GreetingPropertyService();
 	}
 
 	@Test

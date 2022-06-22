@@ -3,19 +3,28 @@ package tw.niq.app;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 import tw.niq.app.controller.ConstructorController;
 import tw.niq.app.controller.HelloController;
 import tw.niq.app.controller.I18nController;
+import tw.niq.app.controller.PetController;
 import tw.niq.app.controller.PropertyController;
 import tw.niq.app.controller.SetterController;
 
+@ComponentScan(basePackages = {"tw.niq.app", "tw.niq.pet"})
 @SpringBootApplication
 public class SpringBootDiExampleApplication {
 
 	public static void main(String[] args) {
 		
 		ApplicationContext ctx = SpringApplication.run(SpringBootDiExampleApplication.class, args);
+		
+		System.out.println("--- Best Pet ---");
+		
+		PetController petController = (PetController) ctx.getBean("petController");
+		
+		System.out.println(petController.getBestPet());
 		
 		System.out.println("--- i18n with Profile ---");
 		

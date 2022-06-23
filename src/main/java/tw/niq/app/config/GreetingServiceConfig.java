@@ -2,6 +2,7 @@ package tw.niq.app.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
@@ -16,6 +17,7 @@ import tw.niq.app.service.GreetingSetterService;
 import tw.niq.pet.service.PetService;
 import tw.niq.pet.service.PetServiceFactory;
 
+@ImportResource("classpath:di-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 	
@@ -59,7 +61,7 @@ public class GreetingServiceConfig {
 		return new GreetingPrimaryService();
 	}
 	
-	@Bean
+//	@Bean
 	GreetingConstructorService greetingConstructorService() {
 		return new GreetingConstructorService();
 	}

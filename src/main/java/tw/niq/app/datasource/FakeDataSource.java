@@ -7,6 +7,8 @@ public class FakeDataSource {
 	private String password;
 	
 	private String jdbcUrl;
+	
+	private String mode;
 
 	public String getUsername() {
 		return username;
@@ -32,9 +34,18 @@ public class FakeDataSource {
 		this.jdbcUrl = jdbcUrl;
 	}
 
+	public String getMode() {
+		return mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
+	}
+
 	@Override
 	public String toString() {
-		return "FakeDataSource [username=" + username + ", password=" + password + ", jdbcUrl=" + jdbcUrl + "]";
+		return "FakeDataSource [username=" + username + ", password=" + password + ", jdbcUrl=" + jdbcUrl + ", mode="
+				+ mode + "]";
 	}
 	
 }

@@ -3,11 +3,9 @@ package tw.niq.app.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
 
 import tw.niq.app.datasource.FakeDataSource;
 
-@PropertySource("classpath:datasource.properties")
 @Configuration
 public class DataSourceConfig {
 

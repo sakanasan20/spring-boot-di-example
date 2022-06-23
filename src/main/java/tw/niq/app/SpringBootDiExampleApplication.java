@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
+import tw.niq.app.bean.PrototypeBean;
+import tw.niq.app.bean.SingletonBean;
 import tw.niq.app.controller.ConstructorController;
 import tw.niq.app.controller.HelloController;
 import tw.niq.app.controller.I18nController;
@@ -19,6 +21,22 @@ public class SpringBootDiExampleApplication {
 	public static void main(String[] args) {
 		
 		ApplicationContext ctx = SpringApplication.run(SpringBootDiExampleApplication.class, args);
+				
+		System.out.println("--- Scope ---");
+		
+		SingletonBean singletonBean_1 = ctx.getBean(SingletonBean.class);
+		SingletonBean singletonBean_2 = ctx.getBean(SingletonBean.class);
+		
+		System.out.println(singletonBean_1.getScope());
+		System.out.println(singletonBean_2.getScope());
+		System.out.println("singletonBean_1 == singletonBean_2: " + (singletonBean_1 == singletonBean_2));
+		
+		PrototypeBean prototypeBean_1 = ctx.getBean(PrototypeBean.class);
+		PrototypeBean prototypeBean_2 = ctx.getBean(PrototypeBean.class);
+		
+		System.out.println(prototypeBean_1.getScope());
+		System.out.println(prototypeBean_2.getScope());
+		System.out.println("prototypeBean_1 == prototypeBean_2: " + (prototypeBean_1 == prototypeBean_2));
 		
 		System.out.println("--- Best Pet ---");
 		

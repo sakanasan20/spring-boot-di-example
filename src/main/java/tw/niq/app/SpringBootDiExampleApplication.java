@@ -13,6 +13,7 @@ import tw.niq.app.controller.I18nController;
 import tw.niq.app.controller.PetController;
 import tw.niq.app.controller.PropertyController;
 import tw.niq.app.controller.SetterController;
+import tw.niq.app.datasource.FakeDataSource;
 
 @ComponentScan(basePackages = {"tw.niq.app", "tw.niq.pet"})
 @SpringBootApplication
@@ -21,6 +22,12 @@ public class SpringBootDiExampleApplication {
 	public static void main(String[] args) {
 		
 		ApplicationContext ctx = SpringApplication.run(SpringBootDiExampleApplication.class, args);
+		
+		System.out.println("--- Fake Data Source ---");
+		
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		
+		System.out.println(fakeDataSource);
 				
 		System.out.println("--- Scope ---");
 		

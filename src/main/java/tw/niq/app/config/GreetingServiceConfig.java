@@ -23,13 +23,13 @@ public class GreetingServiceConfig {
 	
 	@Profile("ES")
 	@Bean("greetingI18nService")
-	GreetingI18nSpanishService GreetingI18nSpanishService() {
+	GreetingI18nSpanishService greetingI18nSpanishService() {
 		return new GreetingI18nSpanishService();
 	}
 	
 	@Primary
 	@Bean
-	GreetingPrimaryService GreetingPrimaryService() {
+	GreetingPrimaryService greetingPrimaryService() {
 		return new GreetingPrimaryService();
 	}
 	

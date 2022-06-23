@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: ES,cat, prod
+
+# Run as -> Run Configurations... -> Environments -> Add -> Name: TW_NIQ_USERNAME, Value: niquser-env
+# Run as -> Run Configurations... -> Arguments -> Program arguments -> --tw.niq.password=niqpass-cmd
+tw:
+  niq:
+    username: niquser
+    password: niqpass
+    jdbc-url: jdbc:mysql://niq.tw:3306/niq_prod
+    mode: default

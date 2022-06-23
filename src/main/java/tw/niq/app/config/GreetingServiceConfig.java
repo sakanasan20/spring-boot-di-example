@@ -13,9 +13,28 @@ import tw.niq.app.service.GreetingI18nSpanishService;
 import tw.niq.app.service.GreetingPrimaryService;
 import tw.niq.app.service.GreetingPropertyService;
 import tw.niq.app.service.GreetingSetterService;
+import tw.niq.pet.service.PetService;
+import tw.niq.pet.service.PetServiceFactory;
 
 @Configuration
 public class GreetingServiceConfig {
+	
+	@Bean
+	PetServiceFactory petServiceFactory() {
+		return new PetServiceFactory();
+	}
+	
+	@Profile({"default", "dog"})
+	@Bean
+	PetService dogPetService(PetServiceFactory petServiceFactory) {
+		return petServiceFactory.getPetService("dog");
+	}
+	
+	@Profile("cat")
+	@Bean
+	PetService catPetService(PetServiceFactory petServiceFactory) {
+		return petServiceFactory.getPetService("cat");
+	}
 	
 	@Bean
 	GreetingI18nEnglishRepository greetingI18nEnglishRepository() {

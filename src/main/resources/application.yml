@@ -14,6 +14,7 @@ tw:
     password: niqpass-default
     jdbc-url: jdbc:mysql://niq.tw:3306/niq_default
     mode: default
+    driver: default-driver
     
 ---
 spring:

@@ -9,6 +9,8 @@ public class FakeDataSource {
 	private String jdbcUrl;
 	
 	private String mode;
+	
+	private String driver;
 
 	public String getUsername() {
 		return username;
@@ -42,10 +44,18 @@ public class FakeDataSource {
 		this.mode = mode;
 	}
 
+	public String getDriver() {
+		return driver;
+	}
+
+	public void setDriver(String driver) {
+		this.driver = driver;
+	}
+
 	@Override
 	public String toString() {
 		return "FakeDataSource [username=" + username + ", password=" + password + ", jdbcUrl=" + jdbcUrl + ", mode="
-				+ mode + "]";
+				+ mode + ", driver=" + driver + "]";
 	}
 	
 }

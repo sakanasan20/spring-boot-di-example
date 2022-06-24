@@ -7,6 +7,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import tw.niq.app.bean.PrototypeBean;
 import tw.niq.app.bean.SingletonBean;
+import tw.niq.app.config.DataSourceConfig;
 import tw.niq.app.controller.ConstructorController;
 import tw.niq.app.controller.HelloController;
 import tw.niq.app.controller.I18nController;
@@ -23,7 +24,13 @@ public class SpringBootDiExampleApplication {
 		
 		ApplicationContext ctx = SpringApplication.run(SpringBootDiExampleApplication.class, args);
 		
-		System.out.println("--- Fake Data Source ---");
+		System.out.println("--- Properties Binding ---");
+		
+		DataSourceConfig dataSourceConfig = ctx.getBean(DataSourceConfig.class);
+		
+		System.out.println(dataSourceConfig.getDriver());
+		
+		System.out.println("--- Fake Data Source with Properties Binding ---");
 		
 		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
 		
